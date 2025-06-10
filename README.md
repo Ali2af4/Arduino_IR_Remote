@@ -31,18 +31,18 @@ You can also find the Fritzing simulation file in the repository, which is used 
 
 ## Pin Configuration
 
-| **Arduino Pin** | **L298N Pin** | **Description**        |
+| **Arduino Pin** | **L298N Pin** | **Description**        |
 |-----------------|---------------|------------------------|
-| D6              | ENA           | PWM for motor A speed  |
-| D5              | IN1           | Motor A forward        |
-| D4              | IN2           | Motor A backward       |
-| —               | 12V & GND     | Motor power supply     |
+| D6              | ENA           | PWM for motor A speed  |
+| D5              | IN1           | Motor A forward        |
+| D4              | IN2           | Motor A backward       |
+| —               | 12V & GND     | Motor power supply     |
 
 | **Arduino Pin** | **IR Receiver Pin** |
 |-----------------|---------------------|
-| D7              | OUT                 |
-| 5V              | VCC                 |
-| GND             | GND                 |
+| D7              | OUT                 |
+| 5V              | VCC                 |
+| GND             | GND                 |
 
 ---
 
@@ -53,8 +53,8 @@ You can also find the Fritzing simulation file in the repository, which is used 
 3. Update the IR key values for your remote using the `IRrecvDump` tool if necessary. For example, replace the key definitions as follows:
 
 ```cpp
-#define KEY_2  0xFF18E7  // Forward
-#define KEY_8  0xFF42BD  // Backward
-#define KEY_5  0xFF38C7  // Stop
-#define KEY_4  0xFF10EF  // Speed decrease
-#define KEY_6  0xFF5AA5  // Speed increase
+#define KEY_2  0xFF18E7  // Forward
+#define KEY_8  0xFF42BD  // Backward
+#define KEY_5  0xFF38C7  // Stop
+#define KEY_4  0xFF10EF  // Speed decrease
+#define KEY_6  0xFF5AA5  // Speed increase
