@@ -2,7 +2,7 @@
 [![Arduino](https://img.shields.io/badge/Arduino-Uno-00979D?logo=arduino)](https://www.arduino.cc/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![Circuit Diagram](Screenshot%202025-06-10%20220440.png)
+<img src="Screenshot%202025-06-10%20220440.png" alt="Circuit Diagram" width="500">
 
 ## Project Overview
 This project controls a DC motor using an IR remote with Arduino Uno. Key features:
