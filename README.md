@@ -1,60 +1,41 @@
-# Arduino IR Remote Car Control 🚗🔧
+# Arduino IR Remote DC Motor Controller 🚀  
+[![Arduino](https://img.shields.io/badge/Arduino-Uno-00979D?logo=arduino)](https://www.arduino.cc/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This project allows controlling a two-motor car using an IR remote with an Arduino Uno. It uses the **L298N motor driver** and receives commands through an IR receiver to adjust speed and direction.
+![Circuit Diagram](Screenshot%202025-06-10%2022044f0p9.png)
+
+**English** | [فارسی](#فارسی-نسخه-فارسی)
 
 ## Project Overview
+This project controls a DC motor using an IR remote with Arduino Uno. Key features:
+- 🎛️ Speed control (0-255 PWM range)
+- 🔄 Direction control (forward/reverse)
+- ⏹️ Emergency stop function
+- 📶 Real-time serial monitoring
 
-This project is designed to control the movement of a DC motor-powered car using an infrared remote. The speed and direction can be controlled remotely with simple button presses.
+## Components
+| Component | Quantity | Notes |
+|-----------|----------|-------|
+| Arduino Uno | 1 | ATmega328P-based |
+| L298N Motor Driver | 1 | With screw terminals |
+| 3-12V DC Motor | 1 | Standard brushed motor |
+| IR Receiver (VS1838B) | 1 | 3-pin (VCC, GND, OUT) |
+| IR Remote | 1 | Any NEC-compatible (TV/DVD) |
+| LM2596 Buck Converter | 1 | For voltage regulation |
+| 3.7V LiPo Battery | 1 | 1100mAh or higher |
+| Breadboard/Jumper Wires | - | For connections |
 
-### Circuit Design & Simulation
+## Circuit Connections
+| Arduino Pin | L298N Pin | IR Receiver | Function |
+|-------------|-----------|-------------|----------|
+| D6          | ENA       |             | Motor A PWM |
+| D5          | IN1       |             | Motor A Forward |
+| D4          | IN2       |             | Motor A Reverse |
+| D7          | -         | OUT         | IR Signal |
+| 5V          | -         | VCC         | IR Power |
+| GND         | GND       | GND         | Common Ground |
 
-The following image shows the breadboard setup for the project. It includes connections for the Arduino, IR receiver, motor driver, and DC motors.
-
-![Arduino IR Car Breadboard](Screenshot%202025-06-10-220440.png)
-
-You can also find the Fritzing simulation file in the repository, which is used for circuit assembly and testing.
-
-> **Note:** To visualize the complete setup, open the `pj1.fzz` file in Fritzing.
-
----
-
-## Hardware Requirements
-
-- **1 x Arduino Uno** (or similar ATmega328P-based board)
-- **1 x L298N Dual H-Bridge Motor Driver**
-- **1 x IR Receiver (KY-022 or compatible)**
-- **2 x DC Motors (6-12V)**
-- **1 x 7-12V Power Supply** for the motors
-- **IR Remote** (any NEC-compatible remote)
-
----
-
-## Pin Configuration
-
-| **Arduino Pin** | **L298N Pin** | **Description**        |
-|-----------------|---------------|------------------------|
-| D6              | ENA           | PWM for motor A speed  |
-| D5              | IN1           | Motor A forward        |
-| D4              | IN2           | Motor A backward       |
-| —               | 12V & GND     | Motor power supply     |
-
-| **Arduino Pin** | **IR Receiver Pin** |
-|-----------------|---------------------|
-| D7              | OUT                 |
-| 5V              | VCC                 |
-| GND             | GND                 |
-
----
-
-## Installation & Setup
-
-1. Install the **IRremote** library using the Arduino Library Manager.
-2. Open the `Arduino_IR_Remote.ino` file in the Arduino IDE.
-3. Update the IR key values for your remote using the `IRrecvDump` tool if necessary. For example, replace the key definitions as follows:
-
-```cpp
-#define KEY_2  0xFF18E7  // Forward
-#define KEY_8  0xFF42BD  // Backward
-#define KEY_5  0xFF38C7  // Stop
-#define KEY_4  0xFF10EF  // Speed decrease
-#define KEY_6  0xFF5AA5  // Speed increase
+**Power Setup:**  
+- Arduino powered via USB  
+- L298N powered by LiPo battery (regulated to 7V via LM2596)  
+- **Important:** L298N 12V input NOT connected to Arduino
