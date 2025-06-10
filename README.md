@@ -10,7 +10,7 @@ This project is designed to control the movement of a DC motor-powered car using
 
 The following image shows the breadboard setup for the project. It includes connections for the Arduino, IR receiver, motor driver, and DC motors.
 
-![Arduino IR Car Breadboard](https://github.com/your-username/Arduino_IR_Remote/blob/main/circuit-diagram.png)
+https://github.com/Aliza-f4/Arduino_IR_Remote/raw/main/Screenshot%202025-06-10%20220440.png
 
 You can also find the Fritzing simulation file in the repository, which is used for circuit assembly and testing.
 
